@@ -1,4 +1,3 @@
-//dbcon.php
 <?php
 $conn = new mysqli('localhost','root','','data');
 if ($conn->connect_error) {
