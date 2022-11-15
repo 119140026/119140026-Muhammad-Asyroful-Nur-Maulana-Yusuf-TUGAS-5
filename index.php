@@ -12,7 +12,7 @@
         <div class="container">
             <br />
             <h2 align="center">DATA MAHASISWA ITERA</h2><br />
-            <select name="multi_search_filter" id="multi_search_filter" multiple class="form-control selectpicker">
+            <select name="datamaha" id="datamaha" multiple class="form-control selectpicker">
             <?php
             include('dbcon.php');
             $query = $conn->query("SELECT DISTINCT prodi FROM mahasiswa ORDER BY nim ASC");
@@ -37,7 +37,7 @@
             
             ?>
             </select>
-            <input type="hidden" name="hidden_country" id="hidden_country" />
+            <input type="hidden" name="data_mahasiswa" id="data_mahasiswa" />
             <div style="clear:both"></div>
             <br />
             <div class="table-responsive">
@@ -74,9 +74,9 @@ $(document).ready(function(){
             }
         })
     }
-    $('#multi_search_filter').change(function(){
-        $('#hidden_country').val($('#multi_search_filter').val());
-        var query = $('#hidden_country').val();
+    $('#datamaha').change(function(){
+        $('#data_mahasiswa').val($('#datamaha').val());
+        var query = $('#data_mahasiswa').val();
         load_data(query);
     });
 });
